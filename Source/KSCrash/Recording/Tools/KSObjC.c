@@ -195,7 +195,7 @@ static const struct class_t* decodeIsaPointer(const void* const isaPointer)
     if(isa & ISA_TAG_MASK)
     {
 #if defined(__arm64__)
-        if (floor(kCFCoreFoundationVersionNumber) <= kCFCoreFoundationVersionNumber_iOS_8_x_Max) {
+        if (floor(kCFCoreFoundationVersionNumber) <= 9) {
             return (const struct class_t*)(isa & ISA_MASK_OLD);
         }
         return (const struct class_t*)(isa & ISA_MASK);
